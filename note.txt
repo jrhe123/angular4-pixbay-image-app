@@ -1,0 +1,37 @@
+1. ngChange: 2 ways watch variables
+
+ex: 
+	test: String = "123";
+	test2:String = "345";
+
+	onChange(newValue) {
+	    console.log("changed");
+	}
+
+	onChange2(val){
+		console.log("changed");
+	}
+
+
+input type="text" [(ngModel)]="test"  name="test" (ngModelChange)="onChange($event)" />
+
+<input type="text" [(ngModel)]="test2"  name="test" #demo (change)="onChange2(demo.value)" />
+
+
+2. Lifecycle hooks
+
+	ngOnInit() {}
+
+	ngOnChanges(){}
+
+	ngDoCheck(){}
+
+	ngAfterContentInit(){}	
+
+	ngAfterContentChecked(){}
+
+	ngAfterViewInit(){}
+
+	ngAfterViewChecked(){}
+
+	ngOnDestroy(){}
